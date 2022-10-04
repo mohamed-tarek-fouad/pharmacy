@@ -5,6 +5,7 @@ import logger from './helpers/middlewares/logger.js';
 import errorHandler from './helpers/middlewares/errorHandler.js';
 import authRouter from './controllers/auth.controller.js';
 import ordersRouter from './controllers/orders.controller.js';
+import productRouter from './controllers/product.controller.js';
 import registerStrategies from './helpers/functions/registerStrategies.js';
 const prisma = new PrismaClient();
 dotenv.config();
@@ -19,6 +20,7 @@ app.use(logger);
 // -- Routes --
 app.use('/auth', authRouter);
 app.use('/orders', ordersRouter);
+app.use ('/products',productRouter)
 
 app.use(errorHandler);
 

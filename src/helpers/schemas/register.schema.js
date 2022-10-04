@@ -28,13 +28,10 @@ const loginSchema = Joi.object({
 		'string.min': 'Name must be at least 2 characters long',
 		'any.required': 'Name is a required field',
 	}),
-	phoneNumber: Joi.string()
-		.regex(/^01[0125][0-9]{8}$/s)
-		.required()
-		.messages({
-			'string.empty': 'Phone number cannot be an empty field',
-			'any.required': 'Phone number is a required field',
-		}),
+	phoneNumber: Joi.string().required().messages({
+		'string.empty': 'Phone number cannot be an empty field',
+		'any.required': 'Phone number is a required field',
+	}),
 });
 
 export default loginSchema;
